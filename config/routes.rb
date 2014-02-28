@@ -1,9 +1,10 @@
-Testblog::Application.routes.draw do
-  resources :categories
+Testblog::Application.routes.draw do 
+  resources  :categories
+  resources  :comments
+  resources  :posts
 
-  resources :comments
-
-  resources :posts
+  root 'index#index'
+  get '/test' => 'index#test', as: 'test'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
