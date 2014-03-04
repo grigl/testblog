@@ -12,10 +12,7 @@
     <div class="span3">
         <% if post.rating %>
         <div class="pull-right">
-            <h3 style="color:orange;" title="<%= post.float_rating %>">
-            <% post.rounded_rating.times do -%>
-                <span class="icon-star"></span>
-            <% end %></h3>
+            <h3 style="color:orange;"><%= post.float_rating %></h3>
         </div>
         <% end %>
     </div>
@@ -38,10 +35,7 @@
                     <div class="span3">
                         <% if comment.post_rating %>
                         <div class="pull-right">
-                            <h5 style="color:orange;" title="<%= comment.post_rating %>">
-                            <% comment.post_rating.times do -%>
-                                <span class="icon-star"></span>
-                            <% end %></h5>
+                            <h5 style="color:orange;"><%= comment.post_rating %></h5>
                         </div>
                         <% end %>
                     </div>
