@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227192944) do
+ActiveRecord::Schema.define(version: 20140304024631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,7 @@ ActiveRecord::Schema.define(version: 20140227192944) do
 
   create_table "comments", force: true do |t|
     t.string   "author"
-    t.string   "author_ip"
-    t.text     "comment"
+    t.text     "comment_body"
     t.integer  "post_rating"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -36,10 +35,19 @@ ActiveRecord::Schema.define(version: 20140227192944) do
     t.string   "title"
     t.string   "author"
     t.string   "author_ip"
-    t.text     "post"
+    t.text     "post_body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+    t.float    "rating"
+    t.integer  "comments_count"
+    t.string   "date_added"
   end
+
+  add_index "posts", ["author"], name: "index_posts_on_author", using: :btree
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
+  add_index "posts", ["comments_count"], name: "index_posts_on_comments_count", using: :btree
+  add_index "posts", ["date_added"], name: "index_posts_on_date_added", using: :btree
+  add_index "posts", ["rating"], name: "index_posts_on_rating", using: :btree
 
 end

@@ -4,7 +4,8 @@ Testblog::Application.routes.draw do
   resources  :posts
 
   root 'index#index'
-  get '/test' => 'index#test', as: 'test'
+  get '/search' => 'index#search'
+  get '/authors' => 'index#search_authors'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

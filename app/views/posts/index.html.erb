@@ -9,8 +9,9 @@
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:author) %></th>
       <th><%= model_class.human_attribute_name(:author_ip) %></th>
-      <th><%= model_class.human_attribute_name(:post) %></th>
-      <th><%= model_class.human_attribute_name(:category_id) %></th>
+      <th><%= model_class.human_attribute_name(:post_body) %></th>
+      <th><%= model_class.human_attribute_name(:rating) %></th>
+      <th><%= model_class.human_attribute_name(:category_name) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -22,8 +23,9 @@
         <td><%= post.title %></td>
         <td><%= post.author %></td>
         <td><%= post.author_ip %></td>
-        <td><%= post.post %></td>
-        <td><%= post.category_id %></td>
+        <td><%= post.post_body %></td>
+        <td><%= post.rating %></td>
+        <td><%= post.category.name %></td>
         <td><%=l post.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

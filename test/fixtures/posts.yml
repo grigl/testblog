@@ -1,3 +1,28 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id             :integer          not null, primary key
+#  title          :string(255)
+#  author         :string(255)
+#  author_ip      :string(255)
+#  post_body      :text
+#  created_at     :datetime
+#  updated_at     :datetime
+#  category_id    :integer
+#  rating         :float
+#  comments_count :integer
+#  date_added     :string(255)
+#
+# Indexes
+#
+#  index_posts_on_author          (author)
+#  index_posts_on_category_id     (category_id)
+#  index_posts_on_comments_count  (comments_count)
+#  index_posts_on_date_added      (date_added)
+#  index_posts_on_rating          (rating)
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
